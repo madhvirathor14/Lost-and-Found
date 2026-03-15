@@ -34,7 +34,7 @@ const SignupPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/signup",
+        "https://lost-and-found-p42x.onrender.com/signup",
         formData
       );
       if (response.data.success) {
