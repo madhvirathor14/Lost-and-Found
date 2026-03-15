@@ -11,12 +11,12 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace "*" with your React frontend's origin
+    origin: "https://lost-and-found-bay-six.vercel.app", // Replace "*" with your React frontend's origin
     credentials: true,
   })
 );
 
-mongoose.connect("mongodb://127.0.0.1:27017/LostAndFound").then(()=>{
+mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("Mongodb connected")
 });
 app.use('/',main)
